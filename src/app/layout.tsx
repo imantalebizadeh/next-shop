@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Vazirmatn, Inter } from "next/font/google";
 
+import { cn } from "@/lib/utils";
+
 import "@/styles/globals.css";
 
 const vazirmatn = Vazirmatn({
@@ -27,9 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl">
-      <body className={`${vazirmatn.variable} ${inter.variable} min-h-screen`}>
-        {children}
-      </body>
+      <body className={cn(vazirmatn.variable, inter.variable)}>{children}</body>
     </html>
   );
 }
