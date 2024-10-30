@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Vazirmatn, Inter } from "next/font/google";
 
+import { TRPCProvider } from "@/trpc/client";
+
 import { cn } from "@/lib/utils";
 
 import "@/styles/globals.css";
@@ -29,7 +31,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl">
-      <body className={cn(vazirmatn.variable, inter.variable)}>{children}</body>
+      <body className={cn(vazirmatn.variable, inter.variable)}>
+        <TRPCProvider>{children}</TRPCProvider>
+      </body>
     </html>
   );
 }
